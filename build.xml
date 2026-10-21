@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ProyectoTransversalParte3" default="jar" basedir=".">
+    <property name="src.dir" value="src/main/java"/>
+    <property name="build.dir" value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="dist.dir" value="dist"/>
+    <path id="classpath"><fileset dir="lib" includes="*.jar"/></path>
+    <target name="init"><mkdir dir="${classes.dir}"/><mkdir dir="${dist.dir}"/></target>
+    <target name="compile" depends="init"><javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="UTF-8" source="8" target="8" includeantruntime="false"><classpath refid="classpath"/></javac></target>
+    <target name="jar" depends="compile"><jar destfile="${dist.dir}/ProyectoTransversalParte3.jar" basedir="${classes.dir}"><manifest><attribute name="Main-Class" value="Vista.Principal"/><attribute name="Class-Path" value="../lib/mariadb-java-client-2.7.12.jar"/></manifest></jar></target>
+    <target name="run" depends="compile"><java classname="Vista.Principal" fork="true" failonerror="true"><classpath><pathelement location="${classes.dir}"/><path refid="classpath"/></classpath></java></target>
+    <target name="clean"><delete dir="${build.dir}"/><delete dir="${dist.dir}"/></target>
+</project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+  <type>org.netbeans.modules.ant.freeform</type>
+  <configuration>
+    <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
+      <name>ProyectoTransversalParte3_SinMaven</name>
+      <properties><property name="src.dir">src/main/java</property></properties>
+      <folders><source-folder><label>Java Sources</label><type>java</type><location>${src.dir}</location></source-folder></folders>
+      <ide-actions>
+        <action name="build"><target>jar</target></action>
+        <action name="clean"><target>clean</target></action>
+        <action name="run"><target>run</target></action>
+        <action name="rebuild"><target>clean</target><target>jar</target></action>
+      </ide-actions>
+      <view><items><source-folder style="packages"><label>Java Sources</label><location>${src.dir}</location></source-folder><source-file><location>build.xml</location></source-file><source-file><location>sql/GP3_nombre_base.sql</location></source-file></items></view>
+    </general-data>
+    <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/4">
+      <compilation-unit><package-root>${src.dir}</package-root><classpath mode="compile">lib/mariadb-java-client-2.7.12.jar</classpath><source-level>1.8</source-level></compilation-unit>
+    </java-data>
+  </configuration>
+</project>
